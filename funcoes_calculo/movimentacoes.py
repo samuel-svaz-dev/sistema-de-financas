@@ -1,3 +1,20 @@
+def leiafloat(mensagem):
+    '''
+    Função para ler um número float, garantindo que a entrada seja válida.
+    Parâmetros:
+    - mensagem: mensagem a ser exibida para o usuário
+    Retorna: o número float lido
+    Função criada por Samuel Vaz
+    '''
+
+    while True:
+        try:
+            n = float(input(mensagem))
+            return n
+        except ValueError:
+            print('Valor inválido! Digite um valor Real.')
+
+
 def adicionar_receita(saldo, movimentos):
     '''
     Função para adicionar uma receita, atualizando o saldo e o extrato.
@@ -8,7 +25,7 @@ def adicionar_receita(saldo, movimentos):
     Função criada por Samuel Vaz
     '''
 
-    receita = float(input('Digite o valor da Receita R$'))
+    receita = leiafloat('Digite o valor da Receita R$')
     descricao = input('Descrição (salário, presente, freelance): ')
 
     movimentos.append({
@@ -33,7 +50,7 @@ def adicionar_despesa(saldo, movimentos):
      Função criada por Samuel Vaz
      '''
 
-     despesa = float(input('Digite o valor da despesa: R$'))
+     despesa = leiafloat('Digite o valor da despesa: R$')
 
      if despesa > saldo:
          print('Não foi possível realizar sua movimentação. Revise seu saldo!')
