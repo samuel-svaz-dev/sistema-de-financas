@@ -71,3 +71,57 @@ def mostrar_saldo(saldo):
     sleep(0.5)
     ui.texto(f'O saldo atual é de R${saldo:.2f}.', 5)
     print('-'*60)
+
+
+def mostrar_extrato(movimentos):
+    '''
+    Função para mostrar o extrato atualizado.
+    Parâmetros:
+    - movimentos: lista de movimentações
+    Retorna: None
+    Função criada por Samuel Vaz
+    '''
+
+    from time import sleep
+    from apresentacao import ui
+
+    sleep(1)
+    print('-'*60)
+    print('Buscando todas movimentações da conta...')
+    print('-'*60)
+    sleep(1)
+
+    ui.titulo('EXTRATO ATUALIZADO')
+
+    if len(movimentos) == 0:
+        print('Sem movimentações na conta!')
+        print('-' * 60)
+
+    else:
+        print(f'{"Nº":<5}{"Tipo":<15}{"Valor (R$)":<15}{"Descrição"}')
+
+        for i, c in enumerate(movimentos, start=1):
+            print(f'{i:<5}{c["tipo"]:<15}R$ {c["valor"]:>10.2f}   {c["desc"]}')
+            sleep(0.1)
+
+        print('-'*60)
+
+
+def sair_sistema():
+    '''
+    Função para sair do sistema, exibindo uma mensagem de despedida.
+    Parâmetros: None
+    Retorna: None
+    Função criada por Samuel Vaz
+    '''
+
+    from time import sleep
+    from apresentacao import ui
+
+    print('-' * 60)
+    print('Saindo do sistema...')
+    print('-' * 60)
+    sleep(1)
+    ui.titulo('OBRIGADO POR UTILIZAR NOSSO PROGRAMA!'
+           '\n PROGRAMA ENCERRADO!')
+    

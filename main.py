@@ -43,32 +43,11 @@ while True:
         movimentacoes.mostrar_saldo(saldo)
 
     elif escolha == 4:
-        time.sleep(1)
-        print('-'*60)
-        print('Buscando todas movimentações da conta...')
-        print('-'*60)
-        time.sleep(1)
-        ui.titulo('EXTRATO ATUALIZADO')
-        if len(movimentos) == 0:
-            print('Sem movimentações na conta!')
-            print('-' * 60)
-        else:
-            print(f'{"Nº":<5}{"Tipo":<15}{"Valor (R$)":<15}{"Descrição"}')
-            for i, c in enumerate(movimentos, start=1):
-                print(f'{i:<5}{c["tipo"]:<15}R$ {c["valor"]:>10.2f}   {c["desc"]}')
-                time.sleep(0.1)
-            print('-'*60)
-            print(f'Saldo atual R${saldo:.2f}')
-            print('-' * 60)
+        movimentacoes.mostrar_extrato(movimentos)
+
     elif escolha == 0:
-        print('-' * 60)
-        print('Saindo do sistema...')
-        print('-' * 60)
-        time.sleep(1)
+        movimentacoes.sair_sistema()
         break
+
     else:
         print('COMANDO INVÁLIDO! TENTE NOVAMENTE'.center(60))
-
-time.sleep(1)
-ui.titulo('OBRIGADO POR UTILIZAR NOSSO PROGRAMA!'
-       '\n PROGRAMA ENCERRADO!')
