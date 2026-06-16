@@ -1,3 +1,23 @@
+def leiamenu(mensagem):
+    '''
+    Função para ler a opção do menu, garantindo que a entrada seja válida.
+    Parâmetros:
+    - mensagem: mensagem a ser exibida para o usuário
+    Retorna: a opção escolhida pelo usuário
+    Função criada por Samuel Vaz
+    '''
+
+    while True:
+        try:
+            n = int(input(mensagem))
+            if n in [0, 1, 2, 3, 4]:
+                return n
+            else:
+                print('Opção inválida! Digite um número entre 0 e 4.')
+        except ValueError:
+            print('Valor inválido! Digite um número inteiro.')
+
+
 def leiafloat(mensagem):
     '''
     Função para ler um número float, garantindo que a entrada seja válida.
@@ -24,9 +44,11 @@ def adicionar_receita(saldo, movimentos):
     Retorna: o novo saldo atualizado
     Função criada por Samuel Vaz
     '''
+    from time import sleep
 
     receita = leiafloat('Digite o valor da Receita R$')
     descricao = input('Descrição (salário, presente, freelance): ')
+    sleep(0.5)
 
     movimentos.append({
         "tipo": "Receita",
@@ -49,14 +71,17 @@ def adicionar_despesa(saldo, movimentos):
      Retorna: o novo saldo atualizado
      Função criada por Samuel Vaz
      '''
+     from time import sleep
 
      despesa = leiafloat('Digite o valor da despesa: R$')
+     sleep(0.5)
 
      if despesa > saldo:
          print('Não foi possível realizar sua movimentação. Revise seu saldo!')
          return saldo
           
      descricao = str(input('Descrição (alimentação, lazer, aluguel): '))
+     sleep(0.5)
 
      movimentos.append({
          "tipo": "Despesa",
@@ -119,7 +144,7 @@ def mostrar_extrato(movimentos):
 
         for i, c in enumerate(movimentos, start=1):
             print(f'{i:<5}{c["tipo"]:<15}R$ {c["valor"]:>10.2f}   {c["desc"]}')
-            sleep(0.1)
+            sleep(0.5)
 
         print('-'*60)
 
@@ -139,6 +164,6 @@ def sair_sistema():
     print('Saindo do sistema...')
     print('-' * 60)
     sleep(1)
-    ui.titulo('OBRIGADO POR UTILIZAR NOSSO PROGRAMA!'
-           '\n PROGRAMA ENCERRADO!')
+    ui.texto('OBRIGADO POR UTILIZAR NOSSO PROGRAMA!'
+           '\n PROGRAMA ENCERRADO!', 3)
     

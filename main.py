@@ -2,29 +2,15 @@ import time
 from apresentacao import ui
 from funcoes_calculo import movimentacoes
 
-menu = (
-    (1, 'Receita'),
-    (2, 'Despesa'),
-    (3, 'Saldo'),
-    (4, 'Extrato'),
-    (0, 'Sair')
-)
-
 
 # Programa Principal
 saldo = 0
 movimentos = []
 
 while True:
-    ui.titulo('SISTEMA FINANCEIRO')
-    ui.texto(f'{" " * 20} {"Nº":<5}{"OPÇÃO":<20}', 3)
-    ui.texto('-'*60, 3)
-
-    for i, o in menu:
-        ui.texto(f'{" " * 20} {i:<5}{o:<20}', 3)
-    ui.texto('-'*60, 3)
+    ui.mostrar_menu()
     
-    escolha = int(input('\nEscolha uma das opções: '))
+    escolha = movimentacoes.leiamenu('\nEscolha uma das opções: ')
     time.sleep(1)
 
     if escolha == 1:

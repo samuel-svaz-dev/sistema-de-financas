@@ -1,7 +1,7 @@
 cor = ('\033[m',          # 0 - SEM COR
        '\033[1;30;41m',   # 1 - VERMELHO
        '\033[1;30;42m',   # 2 - VERDE
-       '\033[7;3m',       # 3 - BRANCO
+       '\033[1;37m',       # 3 - BRANCO
        '\033[1;30;44m',   # 4 - AZUL
        '\033[1;30;45m',   # 5 - ROXO
        )   
@@ -36,4 +36,29 @@ def texto(msg, cores = 0):
     5 - Roxo
     Função criada por Samuel Vaz
     '''
-    print(f'{cor[cores]} {msg.ljust(60)} {cor[0]}') 
+    print(f'{cor[cores]}{msg.ljust(60)}{cor[0]}')
+
+
+def mostrar_menu():
+    '''
+    mostrar_menu()
+    Função para exibir o menu de opções do sistema
+    Parâmetros: None
+    Retorna: None
+    Função criada por Samuel Vaz
+    '''
+    menu = (
+        (1, 'Receita'),
+        (2, 'Despesa'),
+        (3, 'Saldo'),
+        (4, 'Extrato'),
+        (0, 'Sair')
+    )
+
+    titulo('SISTEMA FINANCEIRO')
+    texto(f'{" " * 20}{"Nº":<5}{"OPÇÃO":<20}', 3)
+    texto('-'*60, 3)
+
+    for i, o in menu:
+        texto(f'{" " * 20}{i:<5}{o:<20}', 3)
+    texto('-'*60, 3) 
