@@ -1,3 +1,6 @@
+from apresentacao.ui import texto
+
+
 def leiamenu(mensagem):
     '''
     Função para ler a opção do menu, garantindo que a entrada seja válida.
@@ -16,6 +19,9 @@ def leiamenu(mensagem):
                 print('Opção inválida! Digite um número entre 0 e 4.')
         except ValueError:
             print('Valor inválido! Digite um número inteiro.')
+
+def saldo_atual(saldo):
+    return f'{texto(f'Saldo ATUAL R${saldo:.2f}', 2)} \n {"-" * 60}'
 
 
 def leiafloat(mensagem):
@@ -46,8 +52,10 @@ def adicionar_receita(saldo, movimentos):
     '''
     from time import sleep
 
-    receita = leiafloat('Digite o valor da Receita R$')
-    descricao = input('Descrição (salário, presente, freelance): ')
+    texto('Opção 2 - Receita foi escolhida!', 2)
+
+    receita = leiafloat('\033[1;30;42mDigite o valor da Receita R$\033[m')
+    descricao = input('\033[1;30;42mDescrição (salário, presente, freelance): \033[m')
     sleep(0.5)
 
     movimentos.append({
@@ -57,6 +65,7 @@ def adicionar_receita(saldo, movimentos):
     })
 
     saldo += receita
+    sleep(1)
 
     return saldo
 
@@ -73,14 +82,15 @@ def adicionar_despesa(saldo, movimentos):
      '''
      from time import sleep
 
-     despesa = leiafloat('Digite o valor da despesa: R$')
+
+     despesa = leiafloat('\033[1;30;41mDigite o valor da despesa: R$\033[m')
      sleep(0.5)
 
      if despesa > saldo:
-         print('Não foi possível realizar sua movimentação. Revise seu saldo!')
+         print('\033[1;30;41mNão foi possível realizar sua movimentação. Revise seu saldo!\033[m')
          return saldo
           
-     descricao = str(input('Descrição (alimentação, lazer, aluguel): '))
+     descricao = str(input('\033[1;30;41mDescrição (alimentação, lazer, aluguel): \033[m'))
      sleep(0.5)
 
      movimentos.append({
@@ -160,10 +170,8 @@ def sair_sistema():
     from time import sleep
     from apresentacao import ui
 
-    print('-' * 60)
-    print('Saindo do sistema...')
-    print('-' * 60)
+    ui.titulo('Saindo do Sistema...')
     sleep(1)
-    ui.texto('OBRIGADO POR UTILIZAR NOSSO PROGRAMA!'
-           '\n PROGRAMA ENCERRADO!', 3)
+    ui.titulo('OBRIGADO POR UTILIZAR NOSSO PROGRAMA!')
+    ui.titulo('PORGRAMA ENCERRADO! VOLTE SEMPRE!')
     

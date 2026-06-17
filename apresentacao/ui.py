@@ -1,3 +1,6 @@
+from time import sleep
+
+
 cor = ('\033[m',          # 0 - SEM COR
        '\033[1;30;41m',   # 1 - VERMELHO
        '\033[1;30;42m',   # 2 - VERDE
@@ -19,8 +22,11 @@ def titulo(msg):
     Função criada por Samuel Vaz com base em aulas do Prof Guanabara
     '''
     texto('='*60, 3)
+    sleep(0.5)
     texto(msg.center(60), 3)
+    sleep(0.5)
     texto('='*60, 3)
+    sleep(0.5)
 
 def texto(msg, cores = 0):
     '''
@@ -61,4 +67,5 @@ def mostrar_menu():
 
     for i, o in menu:
         texto(f'{" " * 20}{i:<5}{o:<20}', 3)
+        sleep(0.5)
     texto('-'*60, 3) 
