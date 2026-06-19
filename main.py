@@ -1,7 +1,7 @@
-import time
-from apresentacao import ui
-import funcoes_calculo
-from funcoes_calculo.movimentacoes import saldo_atual
+from time import sleep
+import apresentacao.ui
+import funcoes_calculo.movimentacoes
+
 
 
 # Programa Principal
@@ -9,20 +9,20 @@ saldo = 0
 movimentos = []
 
 while True:
-    ui.mostrar_menu()
+    apresentacao.ui.mostrar_menu()
     
     escolha = funcoes_calculo.movimentacoes.leiamenu('\nEscolha uma das opções: ')
-    time.sleep(1)
+    sleep(1)
 
     if escolha == 1:
         saldo = funcoes_calculo.movimentacoes.adicionar_receita(saldo, movimentos)
 
-        saldo_atual(saldo)
+        funcoes_calculo.movimentacoes.saldo_atual(saldo)
 
     elif escolha == 2:
         saldo = funcoes_calculo.movimentacoes.adicionar_despesa(saldo, movimentos)
 
-        saldo_atual(saldo)
+        funcoes_calculo.movimentacoes.saldo_atual(saldo)
 
     elif escolha == 3:
         funcoes_calculo.movimentacoes.mostrar_saldo(saldo)

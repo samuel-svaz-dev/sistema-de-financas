@@ -1,4 +1,5 @@
-from apresentacao.ui import texto
+import apresentacao.formatacao
+from time import sleep
 
 
 def leiamenu(mensagem):
@@ -21,7 +22,11 @@ def leiamenu(mensagem):
             print('Valor inválido! Digite um número inteiro.')
 
 def saldo_atual(saldo):
-    return f'{texto(f'Saldo ATUAL R${saldo:.2f}', 2)} \n {"-" * 60}'
+    '''
+    Função para mostrar o saldo atual após uma movimentação, destacando o valor atualizado.'''
+
+    
+    return f'{apresentacao.formatacao.texto(f'Saldo ATUAL R${saldo:.2f}', 2)} \n {"-" * 60}'
 
 
 def leiafloat(mensagem):
@@ -50,9 +55,8 @@ def adicionar_receita(saldo, movimentos):
     Retorna: o novo saldo atualizado
     Função criada por Samuel Vaz
     '''
-    from time import sleep
 
-    texto('Opção 2 - Receita foi escolhida!', 2)
+    apresentacao.formatacao.texto('Opção 2 - Receita foi escolhida!', 2)
 
     receita = leiafloat('\033[1;30;42mDigite o valor da Receita R$\033[m')
     descricao = input('\033[1;30;42mDescrição (salário, presente, freelance): \033[m')
@@ -80,7 +84,6 @@ def adicionar_despesa(saldo, movimentos):
      Retorna: o novo saldo atualizado
      Função criada por Samuel Vaz
      '''
-     from time import sleep
 
 
      despesa = leiafloat('\033[1;30;41mDigite o valor da despesa: R$\033[m')
@@ -113,15 +116,13 @@ def mostrar_saldo(saldo):
     Função criada por Samuel Vaz
     '''
 
-    from time import sleep
-    from apresentacao import ui
 
     sleep(0.5)
     print('-'*60)
     print('Calculando o saldo atual...')
     print('-'*60)
     sleep(0.5)
-    ui.texto(f'O saldo atual é de R${saldo:.2f}.', 5)
+    apresentacao.formatacao.texto(f'O saldo atual é de R${saldo:.2f}.', 5)
     print('-'*60)
 
 
@@ -134,8 +135,6 @@ def mostrar_extrato(movimentos):
     Função criada por Samuel Vaz
     '''
 
-    from time import sleep
-    from apresentacao import ui
 
     sleep(1)
     print('-'*60)
@@ -143,7 +142,7 @@ def mostrar_extrato(movimentos):
     print('-'*60)
     sleep(1)
 
-    ui.titulo('EXTRATO ATUALIZADO')
+    apresentacao.formatacao.titulo('EXTRATO ATUALIZADO')
 
     if len(movimentos) == 0:
         print('Sem movimentações na conta!')
@@ -167,11 +166,9 @@ def sair_sistema():
     Função criada por Samuel Vaz
     '''
 
-    from time import sleep
-    from apresentacao import ui
 
-    ui.titulo('Saindo do Sistema...')
+    apresentacao.formatacao.titulo('Saindo do Sistema...')
     sleep(1)
-    ui.titulo('OBRIGADO POR UTILIZAR NOSSO PROGRAMA!')
-    ui.titulo('PORGRAMA ENCERRADO! VOLTE SEMPRE!')
+    apresentacao.formatacao.titulo('OBRIGADO POR UTILIZAR NOSSO PROGRAMA!')
+    apresentacao.formatacao.titulo('PORGRAMA ENCERRADO! VOLTE SEMPRE!')
     
