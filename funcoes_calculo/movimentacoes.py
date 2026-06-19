@@ -25,8 +25,8 @@ def saldo_atual(saldo):
     '''
     Função para mostrar o saldo atual após uma movimentação, destacando o valor atualizado.'''
 
-    
-    return f'{apresentacao.formatacao.texto(f'Saldo ATUAL R${saldo:.2f}', 2)} \n {"-" * 60}'
+    apresentacao.formatacao.texto(f'Saldo ATUAL R${saldo:.2f}', 3)
+    apresentacao.formatacao.texto('-'*60, 3)
 
 
 def leiafloat(mensagem):

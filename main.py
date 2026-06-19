@@ -9,7 +9,7 @@ saldo = 0
 movimentos = []
 
 while True:
-    apresentacao.ui.mostrar_menu()
+    apresentacao.ui.mostrar_menu(saldo)
     
     escolha = funcoes_calculo.movimentacoes.leiamenu('\nEscolha uma das opções: ')
     sleep(1)

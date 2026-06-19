@@ -5,7 +5,7 @@ import funcoes_calculo.movimentacoes
 from apresentacao.formatacao import texto, titulo
 
 
-def mostrar_menu():
+def mostrar_menu(saldo):
     '''
     mostrar_menu()
     Função para exibir o menu de opções do sistema
@@ -29,4 +29,4 @@ def mostrar_menu():
         texto(f'{" " * 20}{i:<5}{o:<20}', 3)
         sleep(0.5)
     texto('-'*60, 3)
-    texto(f'{funcoes_calculo.movimentacoes.saldo_atual}', 2) 
+    funcoes_calculo.movimentacoes.saldo_atual(saldo)

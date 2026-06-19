@@ -4,7 +4,7 @@ import time
 cor = ('\033[m',          # 0 - SEM COR
        '\033[1;30;41m',   # 1 - VERMELHO
        '\033[1;30;42m',   # 2 - VERDE
-       '\033[1;37m',       # 3 - BRANCO
+       '\033[1;37m',      # 3 - BRANCO
        '\033[1;30;44m',   # 4 - AZUL
        '\033[1;30;45m',   # 5 - ROXO
        )
