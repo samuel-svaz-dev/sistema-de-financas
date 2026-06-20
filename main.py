@@ -1,6 +1,7 @@
 from time import sleep
 import apresentacao.ui
 import funcoes_calculo.movimentacoes
+from apresentacao.arquivos.arq import arquivo_existe
 
 
 
