@@ -56,7 +56,7 @@ def adicionar_receita(saldo, movimentos):
     Função criada por Samuel Vaz
     '''
 
-    apresentacao.formatacao.texto('Opção 2 - Receita foi escolhida!', 2)
+    apresentacao.formatacao.texto('Opção 1 - Receita foi escolhida!', 2)
 
     receita = leiafloat('\033[1;30;42mDigite o valor da Receita R$\033[m')
     descricao = input('\033[1;30;42mDescrição (salário, presente, freelance): \033[m')
@@ -86,6 +86,8 @@ def adicionar_despesa(saldo, movimentos):
      '''
 
 
+     apresentacao.formatacao.texto('Opção 2 - Despesa foi escolhida!', 1)
+     
      despesa = leiafloat('\033[1;30;41mDigite o valor da despesa: R$\033[m')
      sleep(0.5)
 
