@@ -1,8 +1,11 @@
-# Sistema Financeiro em Python
+# Sistema de Controle Financeiro Pessoal via Terminal
 
-Projeto desenvolvido para revisar os conceitos estudados e auxiliar na organização mensal financeira
+🚧 Em desenvolvimento
+
+Projeto desenvolvido para revisar os conceitos estudados em Python e auxiliar na organização mensal das minhas finanças pessoais.
 
 ## Funcionalidades
+
 - Cadastro de Receitas
 - Cadastro de Despesas
 - Consulta de Saldo
@@ -10,33 +13,60 @@ Projeto desenvolvido para revisar os conceitos estudados e auxiliar na organiza�
 - Impede despesas maiores que o saldo
 - Validação dos inputs
 - Modularização das funções
+- Persistência de dados em arquivo
 
 ## Tecnologias
+
 - Python 3.13
 - VS Code
-- PyCharm
 - Git
-- Github
+- GitHub
 
-## Objetivos
-- Aplicar conceitos de: Função, Listas, Dicionários, Estruturas de Repetição e Condicionais
-- Utilizar noções de Modularização no projeto
-- Criar um programa que consiga apresentar todo o cenário financeiro de uma pessoa de acordo com seus dados adicionados
+## Como executar
 
-## Exemplo do Programa Funcionando
+```bash
+git clone https://github.com/samuel-svaz-dev/sistema-de-financas
+cd sistema-de-financas
+python main.py
+```
+
+## O que aprendi / Desafios
+
+Esse projeto começou simples (um loop de menu) e foi crescendo junto com o que eu ia aprendendo no curso. Alguns pontos que marcaram o desenvolvimento:
+
+- **Modularização**: separar o código em pacotes (`apresentacao` para a interface do menu e `funcoes_calculo` para as regras de cálculo) deixou o `main.py` muito mais limpo e me obrigou a pensar em responsabilidade de cada parte do sistema, não só em "fazer funcionar".
+- **Tratamento de erros**: usar blocos `try/except/finally` para validar os inputs do usuário foi meu primeiro contato real com tratamento de exceções fora de exemplos de curso — entender quando usar `finally` (por exemplo, para garantir que um arquivo seja fechado independente do que aconteça) mudou como eu penso sobre código "à prova de erro do usuário".
+- **Persistência em arquivo**: migrar de dados guardados só em memória (que se perdiam ao fechar o programa) para salvar em arquivo foi o maior salto de complexidade até agora. Tive que pensar em como estruturar cada movimentação (receita/despesa) como um dicionário antes de gravar, e lidar com leitura/escrita sem corromper dados existentes.
+
+## Próximos passos
+
+- Aplicar conceitos de Programação Orientada a Objetos (classes como `Transacao` e `Conta`)
+- Migrar a persistência de arquivo de texto para um banco de dados simples (SQLite)
+- Adicionar testes automatizados das funções de cálculo
+- Melhorar a interface do terminal (cores e formatação)
+
+## Demonstração
 
 - Menu Inicial do Terminal
   
-  <img width="547" height="277" alt="Captura de tela 2026-06-15 211413" src="https://github.com/user-attachments/assets/18fbc044-a59a-4a3b-b199-4be26c74aa73" />
+  ![alt text](image.png)
+
 
 - Adicionando Receita
 
-  <img width="550" height="102" alt="Captura de tela 2026-06-15 211446" src="https://github.com/user-attachments/assets/13da2814-8ed4-40db-966b-faf2835f443c" />
+  ![alt text](image-1.png)
+
+
+- Adicionando Despesa
+
+  ![alt text](image-2.png)
+
 
 - Exibindo Extrato das Movimentações
 
-  <img width="552" height="472" alt="Captura de tela 2026-06-15 211513" src="https://github.com/user-attachments/assets/649727db-9149-44b9-a025-a614250d1759" />
+  ![alt text](image-3.png)
 
 
+- Saindo do Programa
 
-  
+  ![alt text](image-4.png)
