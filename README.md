@@ -60,6 +60,9 @@ python main.py
 
 > ⚠️ **Observação:** atualmente os dados são armazenados apenas em memória durante a execução — ou seja, ao fechar o programa, as informações cadastradas são perdidas. A persistência em arquivo está nos próximos passos do roadmap.
 
+- Estudos para utilização de arquivos de textos
+
+
 ## 🖼️ Demonstração
 
 **Menu Inicial do Terminal**
@@ -85,6 +88,6 @@ python main.py
 
 **Samuel Vaz**
 
-Professor de matemática em transição de carreira para desenvolvimento backend Python.
+Professor de matemática em transição de carreira para Desenvolvimento Backend Python.
 
-[GitHub](https://github.com/samuel-svaz-dev) · [LinkedIn](#)
+[GitHub](https://github.com/samuel-svaz-dev) · [LinkedIn](https://www.linkedin.com/in/samuel-souza-vaz-1bb547378/)
