@@ -21,7 +21,7 @@ def mostrar_menu(saldo):
         (0, 'Sair')
     )
 
-    titulo('SISTEMA FINANCEIRO')
+    titulo('MENU DE OPÇÕES - SISTEMA DE FINANÇAS PESSOAIS')
     texto(f'{" " * 20}{"Nº":<5}{"OPÇÃO":<20}', 3)
     texto('-'*60, 3)
 

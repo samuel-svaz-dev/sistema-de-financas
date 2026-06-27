@@ -14,6 +14,14 @@ def arquivo_existe(nome):
 
 
 def cadastrar_movimento(arq, movimento):
+    '''
+    Função para cadastrar um novo movimento no arquivo.
+    Parâmetros: arq (string) - nome do arquivo, movimento (dict) - dicionário com os dados do movimento
+    Retorna: None
+    Função criada por Samuel Vaz
+    '''
+
+    
     try:
         a = open(arq, 'a')
     except:

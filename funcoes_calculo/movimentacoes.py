@@ -152,6 +152,7 @@ def mostrar_extrato(movimentos):
 
     else:
         print(f'{"Nº":<5}{"Tipo":<15}{"Valor (R$)":<15}{"Descrição"}')
+        print('-'*60)
 
         for i, c in enumerate(movimentos, start=1):
             print(f'{i:<5}{c["tipo"]:<15}R$ {c["valor"]:>10.2f}   {c["desc"]}')
