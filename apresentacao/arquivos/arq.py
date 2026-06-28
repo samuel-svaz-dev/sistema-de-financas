@@ -35,7 +35,3 @@ def cadastrar_movimento(arq, movimento):
             print(f'Novo registro de {movimento["tipo"]} adicionado.')
         finally:
             a.close()
-
-
-#a = open(arq, 'a')
-#a.write(f'{movimento["tipo"]};{movimento["valor"]};{movimento["desc"]}\n')
