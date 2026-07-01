@@ -79,7 +79,8 @@ python main.py
 
 ## 🚧 Roadmap / Próximos Passos
 
-- [ ] Persistência de dados em arquivo
+- [ ] Persistência de dados em arquivo txt
+- [ ] Persistência de dados em arquivo json
 - [ ] Refatoração para Programação Orientada a Objetos (POO)
 - [ ] Categorização de despesas e receitas
 - [ ] Testes automatizados
@@ -88,6 +89,6 @@ python main.py
 
 **Samuel Vaz**
 
-Professor de matemática em transição de carreira para Desenvolvimento Backend Python.
+Professor de Matemática em transição de carreira para Desenvolvimento Backend Python.
 
 [GitHub](https://github.com/samuel-svaz-dev) · [LinkedIn](https://www.linkedin.com/in/samuel-souza-vaz-1bb547378/)
