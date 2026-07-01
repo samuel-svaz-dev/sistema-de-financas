@@ -1,13 +1,16 @@
 from time import sleep
 import apresentacao.ui
 import funcoes_calculo.movimentacoes
-from apresentacao.arquivos.arq import arquivo_existe
+from apresentacao.arquivos.interface_arquivo import *
 
 
 
 # Programa Principal
 saldo = 0
 movimentos = []
+
+if not arquivo_existe('financas.txt'):
+    criar_arquivo('financas.txt')
 
 while True:
     apresentacao.ui.mostrar_menu(saldo)

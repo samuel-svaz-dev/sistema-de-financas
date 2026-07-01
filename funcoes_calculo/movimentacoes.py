@@ -1,5 +1,6 @@
 import apresentacao.formatacao
 from time import sleep
+from apresentacao.arquivos.interface_arquivo import *
 
 
 def leiamenu(mensagem):
@@ -68,6 +69,8 @@ def adicionar_receita(saldo, movimentos):
         "desc": descricao
     })
 
+    cadastrar_movimento('financas.txt', movimentos[-1])
+
     saldo += receita
     sleep(1)
 
@@ -103,6 +106,8 @@ def adicionar_despesa(saldo, movimentos):
          "valor": despesa,
          "desc" : descricao
      })
+
+     cadastrar_movimento('financas.txt', movimentos[-1])
 
      saldo -= despesa
 
