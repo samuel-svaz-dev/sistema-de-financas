@@ -1,3 +1,0 @@
-tipo; valor; descrição 
-Receita; 1870.0; Salário 
-Despesa; 1500.0; Agiota 
