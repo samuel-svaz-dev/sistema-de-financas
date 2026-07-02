@@ -7,7 +7,7 @@ def arquivo_existe(nome):
     '''
 
     try:
-        with open(nome, 'r') as arquivo:
+        with open(nome, 'r', encoding='utf-8') as arquivo:
             return True
     except FileNotFoundError:
         return False
@@ -23,10 +23,13 @@ def criar_arquivo(nome):
     '''
 
     try:
-        with open(nome, 'w') as arquivo:
-            arquivo.write('tipo; valor; descrição \n')
-    except:
-        print('Houve um erro ao criar o arquivo!')
+        with open(nome, 'w', encoding='utf-8') as arquivo:
+            cabecalho = f'{"Tipo":<12} | {"Valor (R$)":<12} | {"Descrição"}\n'
+            linha = '-' * len(cabecalho) + '\n'
+            arquivo.write(cabecalho)
+            arquivo.write(linha)
+    except Exception as e:
+        print(f'Houve um erro ao criar o arquivo: {e}')
     else:
         print(f'Arquivo {nome} criado com sucesso!')
 
@@ -41,9 +44,11 @@ def cadastrar_movimento(nome, movimento):
     '''
     
     try:
-        with open(nome, 'a') as arquivo:
-            arquivo.write(f'{movimento["tipo"]}; {movimento["valor"]}; {movimento["desc"]} \n')
-    except:
-        print('Houve um erro!')
+        with open(nome, 'a', encoding='utf-8') as arquivo:
+            valor_formatado = f'R${movimento["valor"]:.2f}'
+            linha = f'{movimento["tipo"]:<12} | {valor_formatado:<12} | {movimento["desc"]}\n'
+            arquivo.write(linha)
+    except Exception as e:
+        print(f'Houve um erro ao cadastrar a movimentação: {e}')
     else:
         print('Movimentação financeira cadastrada com sucesso!')
