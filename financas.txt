@@ -1,0 +1,4 @@
+Tipo         | Valor (R$)   | Descrição
+----------------------------------------
+Receita      | R$5000.00    | Salário
+Despesa      | R$1500.00    | Aluguel

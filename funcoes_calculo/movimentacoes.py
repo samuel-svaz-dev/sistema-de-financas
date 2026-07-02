@@ -133,6 +133,14 @@ def mostrar_saldo(saldo):
     print('-'*60)
 
 
+def acao_saldo(nome_arquivo):
+    valor_calculado = exibir_saldo(nome_arquivo)
+
+    if valor_calculado is not None:
+        mostrar_saldo(valor_calculado)
+
+
+
 def mostrar_extrato(movimentos):
     '''
     Função para mostrar o extrato atualizado.

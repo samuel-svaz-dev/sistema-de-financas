@@ -52,3 +52,25 @@ def cadastrar_movimento(nome, movimento):
         print(f'Houve um erro ao cadastrar a movimentação: {e}')
     else:
         print('Movimentação financeira cadastrada com sucesso!')
+
+
+def exibir_saldo(nome):
+    try:
+        with open(nome, 'r', encoding='utf-8') as arquivo:
+            saldo_atual = 0
+            for linha in arquivo:
+                if 'Receita' not in linha and 'Despesa' not in linha:
+                    continue
+                pedacos = linha.strip().split('|')
+                tipo = pedacos[0].strip()
+                valor = float(pedacos[1].strip().replace('R$', ''))
+                descricao = pedacos[2].strip()
+                if tipo == 'Receita':
+                    saldo_atual += valor
+                elif tipo == 'Despesa':
+                    saldo_atual -= valor
+            return saldo_atual
+    except FileNotFoundError:
+        print('Arquivo não encontrado!')
+    except Exception as e:
+        print(f'Erro ao ler o arquivo {e}')

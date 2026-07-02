@@ -8,6 +8,7 @@ from apresentacao.arquivos.interface_arquivo import *
 # Programa Principal
 saldo = 0
 movimentos = []
+arquivo_movimentacoes = 'financas.txt'
 
 if not arquivo_existe('financas.txt'):
     criar_arquivo('financas.txt')
@@ -25,11 +26,12 @@ while True:
 
     elif escolha == 2:
         saldo = funcoes_calculo.movimentacoes.adicionar_despesa(saldo, movimentos)
+    
 
         funcoes_calculo.movimentacoes.saldo_atual(saldo)
 
     elif escolha == 3:
-        funcoes_calculo.movimentacoes.mostrar_saldo(saldo)
+        funcoes_calculo.movimentacoes.acao_saldo(arquivo_movimentacoes)
 
     elif escolha == 4:
         funcoes_calculo.movimentacoes.mostrar_extrato(movimentos)
