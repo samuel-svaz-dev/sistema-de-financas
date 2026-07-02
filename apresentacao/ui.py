@@ -29,4 +29,3 @@ def mostrar_menu(saldo):
         texto(f'{" " * 20}{i:<5}{o:<20}', 3)
         sleep(0.5)
     texto('-'*60, 3)
-    funcoes_calculo.movimentacoes.saldo_atual(saldo)

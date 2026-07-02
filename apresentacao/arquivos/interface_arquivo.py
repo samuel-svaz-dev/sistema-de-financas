@@ -55,6 +55,13 @@ def cadastrar_movimento(nome, movimento):
 
 
 def exibir_saldo(nome):
+    '''
+    Função para exibir o saldo atual a partir do arquivo de movimentações.
+    Parâmetros: nome (str) - nome do arquivo
+    Retorna: float - saldo atual
+    Função criada por Samuel Vaz
+    '''
+    
     try:
         with open(nome, 'r', encoding='utf-8') as arquivo:
             saldo_atual = 0
