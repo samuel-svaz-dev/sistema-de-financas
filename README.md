@@ -1,94 +1,97 @@
-# 💰 Sistema Financeiro em Python
+# 💰 Sistema de Controle Financeiro Pessoal
 
-Sistema de controle financeiro pessoal via terminal, desenvolvido para aplicar e revisar conceitos de lógica de programação e estruturação de código em Python, com foco em auxiliar na organização financeira mensal de uma pessoa.
+[![Python Version](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> Projeto pessoal de estudo, desenvolvido durante minha transição de carreira de professor de matemática para desenvolvedor backend Python.
+Um sistema de controle financeiro pessoal simplificado executado via terminal. Este projeto foi desenvolvido com o objetivo de consolidar conceitos fundamentais de lógica de programação, modularização de código e persistência de dados em Python.
 
-## 📋 Sobre o Projeto
+**Nota de Contexto:** Este projeto faz parte do meu portfólio focado na transição de carreira de Professor de Matemática para Desenvolvedor Backend Python. Aqui, aplico a rigidez lógica e a resolução de problemas do ecossistema matemático na engenharia de software.
 
-O programa simula um sistema financeiro de terminal onde o usuário pode cadastrar receitas e despesas, consultar seu saldo e visualizar um extrato completo das movimentações, com validações para impedir inconsistências (como despesas maiores que o saldo disponível).
+---
 
 ## ⚙️ Funcionalidades
 
-- ✅ Cadastro de receitas
-- ✅ Cadastro de despesas
-- ✅ Consulta de saldo
-- ✅ Extrato com histórico de movimentações
-- ✅ Bloqueio de despesas maiores que o saldo disponível
-- ✅ Validação de inputs do usuário
-- ✅ Código modularizado em funções
+- **Gestão de Fluxo de Caixa:** Cadastro modular de receitas e despesas.
+- **Validação de Consistência:** Bloqueio inteligente de despesas que superem o saldo disponível em conta.
+- **Extrato Dinâmico:** Histórico completo de movimentações realizadas.
+- **Persistência em Arquivo:** Armazenamento e leitura de dados via arquivo local (`financas.txt`), garantindo a preservação das informações entre as sessões.
+- **Interface CLI Interativa:** Menu estruturado em loop com validações contra inputs inválidos do usuário.
 
-## 🛠️ Tecnologias
+---
 
-- Python 3.13
-- VS Code
-- Git / GitHub
+## 🛠️ Tecnologias e Conceitos Aplicados
 
-## 🎯 Objetivos de Aprendizado
+- **Linguagem:** Python 3.13
+- **Modularização:** Divisão de responsabilidades entre fluxo de controle (`main.py`) e lógica de negócio (`funcoes_calculo/`).
+- **I/O de Arquivos:** Manipulação de leitura e escrita para persistência de dados local.
+- **Versionamento:** Boas práticas de commits com Git e organização de repositório no GitHub.
 
-Este projeto foi construído para aplicar, na prática, conceitos como:
-
-- Funções, listas, dicionários, estruturas de repetição e condicionais
-- Modularização de código em múltiplos arquivos
-- Construção de um fluxo de menu interativo via terminal
-- Organização de um projeto Python do zero, com versionamento em Git
+---
 
 ## 📂 Estrutura do Projeto
 
-```
+```text
 sistema-de-financas/
-├── apresentacao/         # Imagens e materiais de apresentação do projeto
-├── funcoes_calculo/      # Módulos com as funções de cálculo financeiro
-├── main.py               # Ponto de entrada do programa (menu principal)
-└── README.md
+├── apresentacao/         # Elementos visuais e demonstrações do sistema
+├── funcoes_calculo/      # Módulos contendo as regras de negócio e persistência
+├── imagens/              # Imagens utilizadas na documentação
+├── financas.txt          # Arquivo de persistência local dos dados
+├── main.py               # Ponto de entrada do programa e fluxo do menu
+└── README.md             # Documentação do projeto
+
 ```
 
-## ▶️ Como Executar
+---
 
-Não há dependências externas — apenas Python instalado na máquina.
+## ▶️ Como Executar o Projeto
 
+Certifique-se de ter o Python 3.13 (or superior) instalado em sua máquina. Não há necessidade de instalar dependências externas.
+
+1. Clone este repositório:
 ```bash
-# Clone o repositório
-git clone https://github.com/samuel-svaz-dev/sistema-de-financas.git
+git clone [https://github.com/samuel-svaz-dev/sistema-de-financas.git](https://github.com/samuel-svaz-dev/sistema-de-financas.git)
 
-# Entre na pasta do projeto
+```
+
+
+2. Navegue até o diretório do projeto:
+```bash
 cd sistema-de-financas
 
-# Execute o programa
-python main.py
 ```
 
-> ⚠️ **Observação:** atualmente os dados são armazenados apenas em memória durante a execução — ou seja, ao fechar o programa, as informações cadastradas são perdidas. A persistência em arquivo está nos próximos passos do roadmap.
 
-- Estudos para utilização de arquivos de textos
+3. Execute a aplicação:
+```bash
+python main.py
+
+```
 
 
-## 🖼️ Demonstração
 
-**Menu Inicial do Terminal**
+---
 
-![Menu inicial do sistema](imagens/menu_inicial.png)
+## 🚧 Roadmap de Evolução
 
-**Cadastro de Receita**
+O projeto está em constante evolução. Os próximos passos planejados são:
 
-![Cadastro de receita](imagens/receita.png)
+* [ ] **Refatoração para POO:** Migrar a arquitetura funcional atual para Programação Orientada a Objetos (OOP).
+* [ ] **Persistência Estruturada (JSON):** Substituir o arquivo TXT por armazenamento JSON para melhor estruturação dos dados.
+* [ ] **Categorização:** Adicionar categorias para despesas (Ex: Alimentação, Transporte) e receitas.
+* [ ] **Testes Automatizados:** Implementar testes unitários utilizando `pytest` para garantir a integridade dos cálculos.
 
-**Extrato de Movimentações**
-
-![Extrato de movimentações](imagens/extrato.png)
-
-## 🚧 Roadmap / Próximos Passos
-
-- [ ] Persistência de dados em arquivo txt
-- [ ] Persistência de dados em arquivo json
-- [ ] Refatoração para Programação Orientada a Objetos (POO)
-- [ ] Categorização de despesas e receitas
-- [ ] Testes automatizados
+---
 
 ## 👤 Autor
 
 **Samuel Vaz**
+*Professor de Matemática & Desenvolvedor Backend Python em Construção.*
 
-Professor de Matemática em transição de carreira para Desenvolvimento Backend Python.
+Fique à vontade para se conectar comigo, dar feedbacks sobre o código ou sugerir melhorias!
 
-[GitHub](https://github.com/samuel-svaz-dev) · [LinkedIn](https://www.linkedin.com/in/samuel-souza-vaz-1bb547378/)
+* **GitHub:** [@samuel-svaz-dev](https://github.com/samuel-svaz-dev)
+* **LinkedIn:** [Samuel Vaz](https://www.linkedin.com/in/samuel-souza-vaz-1bb547378/)
+
+```
+
+```
