@@ -5,7 +5,7 @@
 
 Um sistema de controle financeiro pessoal simplificado executado via terminal. Este projeto foi desenvolvido com o objetivo de consolidar conceitos fundamentais de lógica de programação, modularização de código e persistência de dados em Python.
 
-**Nota de Contexto:** Este projeto faz parte do meu portfólio focado na transição de carreira de Professor de Matemática para Desenvolvedor Backend Python. Aqui, aplico a rigidez lógica e a resolução de problemas do ecossistema matemático na engenharia de software.
+**Nota de Contexto:** Este projeto faz parte do meu portfólio focado na transição de carreira de Professor de Matemática para Desenvolvedor Backend Python. Tento por meio desse projeto aplicar os conceitos que venho estudando e pesquisando.
 
 ---
 
