@@ -21,6 +21,7 @@ def leiamenu(mensagem):
                 print('Opção inválida! Digite um número entre 0 e 4.')
         except ValueError:
             print('Valor inválido! Digite um número inteiro.')
+            
 
 def saldo_atual(saldo):
     '''
