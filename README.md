@@ -82,6 +82,28 @@ O projeto está em constante evolução. Os próximos passos planejados são:
 
 ---
 
+## 📸 Demonstração do Sistema
+
+![Tela Principal do Sistema](imagens/menu_inicial.png)
+
+---
+
+![Adicionando Receita](imagens/receita.png)
+
+---
+
+![Adicionando Despesa](imagens/despesa.png)
+
+---
+
+![Extrato](imagens/extrato.png)
+
+---
+
+![Saída do Sistema](imagens/saida.png)
+
+---
+
 ## 👤 Autor
 
 **Samuel Vaz**
