@@ -1,44 +1,29 @@
-from time import sleep
-import apresentacao.ui
-import funcoes_calculo.movimentacoes
-from apresentacao.arquivos.interface_arquivo import *
+from rich import print
+from rich.panel import Panel
+from src.modelos.conta import Conta
+from src.modelos.transacao import Transacao
 
 
-
-# Programa Principal
-saldo = 0
-movimentos = []
-arquivo_movimentacoes = 'financas.txt'
-
-if not arquivo_existe('financas.txt'):
-    criar_arquivo('financas.txt')
+minha_conta = Conta(101, 'Samuel')
 
 while True:
-    apresentacao.ui.mostrar_menu(saldo)
-    
-    escolha = funcoes_calculo.movimentacoes.leiamenu('\nEscolha uma das opções: ')
-    sleep(1)
-
-    if escolha == 1:
-        saldo = funcoes_calculo.movimentacoes.adicionar_receita(saldo, movimentos)
-
-        funcoes_calculo.movimentacoes.saldo_atual(saldo)
-
-    elif escolha == 2:
-        saldo = funcoes_calculo.movimentacoes.adicionar_despesa(saldo, movimentos)
-    
-
-        funcoes_calculo.movimentacoes.saldo_atual(saldo)
-
-    elif escolha == 3:
-        funcoes_calculo.movimentacoes.acao_saldo(arquivo_movimentacoes)
-
-    elif escolha == 4:
-        funcoes_calculo.movimentacoes.mostrar_extrato(movimentos)
-
-    elif escolha == 0:
-        funcoes_calculo.movimentacoes.sair_sistema()
+    menu_de_opcoes = f'[green]1 - RECEITA[/]\n[red]2 - DESPESA[/]\n[magenta]3 - EXTRATO[/]\n[white]0 - SAIR[/]'
+    menu = Panel(f'{menu_de_opcoes}', title = 'MENU DE OPÇÕES', width = 30, style = 'blue')
+    print(menu)
+    opcao = input('Digite a opção escolhida ou 0 para sair!')
+    if opcao == '1':
+        valor_receita = float(input('[green]Digite o valor da Receita R$[/]'))
+        desc_receita = str(input('[green]Digite a descrição da Receita: [/]'))
+        nova_receita = Transacao('RECEITA', valor_receita, desc_receita)
+        minha_conta.adiciona_transacao(nova_receita)
+    elif opcao == '2':
+        valor_despesa = float(input('[red]Digite o valor da Despesa R$[/]'))
+        desc_despesa = str(input('[red]Digite a descrição da Despesa[/]'))
+        nova_despesa = Transacao('DESPESA', valor_despesa, desc_despesa)
+        minha_conta.adiciona_transacao(nova_despesa)
+    elif opcao == '3':
+        minha_conta.exibir_extrato()
+    elif opcao == '0':
         break
-
     else:
-        print('COMANDO INVÁLIDO! TENTE NOVAMENTE'.center(60))
+        print('[bold white red]OPÇÃO INVÁLIDA![/]')
