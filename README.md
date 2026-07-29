@@ -1,30 +1,28 @@
-# 💰 Sistema de Controle Financeiro Pessoal
+# 💰 Sistema de Controle Financeiro Pessoal (CLI & POO)
 
-[![Python Version](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/)
+[![Python Version](https://img.shields.io/badge/Python-3.13%2B-blue.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Um sistema de controle financeiro pessoal simplificado executado via terminal. Este projeto foi desenvolvido com o objetivo de consolidar conceitos fundamentais de lógica de programação, modularização de código e persistência de dados em Python.
-
-**Nota de Contexto:** Este projeto faz parte do meu portfólio focado na transição de carreira de Professor de Matemática para Desenvolvedor Backend Python. Tento por meio desse projeto aplicar os conceitos que venho estudando e pesquisando.
+Um sistema de controle financeiro pessoal executado via terminal, reestruturado sob o paradigma de **Programação Orientada a Objetos (POO)**. Este projeto faz parte da minha jornada de transição de carreira de **Professor de Matemática para Desenvolvedor Backend Python**, aplicando conceitos avançados de arquitetura de software, modularização e boas práticas de código.
 
 ---
 
 ## ⚙️ Funcionalidades
 
-- **Gestão de Fluxo de Caixa:** Cadastro modular de receitas e despesas.
-- **Validação de Consistência:** Bloqueio inteligente de despesas que superem o saldo disponível em conta.
-- **Extrato Dinâmico:** Histórico completo de movimentações realizadas.
-- **Persistência em Arquivo:** Armazenamento e leitura de dados via arquivo local (`financas.txt`), garantindo a preservação das informações entre as sessões.
-- **Interface CLI Interativa:** Menu estruturado em loop com validações contra inputs inválidos do usuário.
+- **Gestão de Fluxo de Caixa:** Entradas (receitas) e saídas (despesas) tratadas como modelos de dados bem definidos.
+- **Validação de Saldos e Regras de Negócio:** Bloqueio e tratamento para operações que excedam o saldo disponível.
+- **Extrato e Histórico Dinâmico:** Visualização clara do histórico de movimentações e saldo consolidado.
+- **Interface CLI Interativa:** Menu em loop contínuo com tratamento robusto de exceções e entradas do usuário.
+- **Armazenamento em Memória / Persistência:** Estrutura modular preparada para persistência de dados isolada da interface.
 
 ---
 
-## 🛠️ Tecnologias e Conceitos Aplicados
+## 🛠️ Arquitetura e Conceitos Aplicados
 
-- **Linguagem:** Python 3.13
-- **Modularização:** Divisão de responsabilidades entre fluxo de controle (`main.py`) e lógica de negócio (`funcoes_calculo/`).
-- **I/O de Arquivos:** Manipulação de leitura e escrita para persistência de dados local.
-- **Versionamento:** Boas práticas de commits com Git e organização de repositório no GitHub.
+- **Linguagem:** Python 3.13+
+- **Programação Orientada a Objetos (POO):** Encapsulamento, criação de classes/modelos para representar entidades do domínio e separação clara de responsabilidades.
+- **Arquitetura Modular:** Separação entre a interface de linha de comando (`src/cli/` ou `main.py`), modelos de dados (`src/models/` ou `docs/modulos`) e lógica de aplicação.
+- **Versionamento e Git Flow:** Commits semânticos (`refatoracao-poo`, `refactor(cli)`) e uso de Pull Requests para integração contínua no GitHub.
 
 ---
 
@@ -32,88 +30,62 @@ Um sistema de controle financeiro pessoal simplificado executado via terminal. E
 
 ```text
 sistema-de-financas/
-├── apresentacao/         # Elementos visuais e demonstrações do sistema
-├── funcoes_calculo/      # Módulos contendo as regras de negócio e persistência
-├── imagens/              # Imagens utilizadas na documentação
-├── financas.txt          # Arquivo de persistência local dos dados
-├── main.py               # Ponto de entrada do programa e fluxo do menu
+├── docs/
+│   └── imagens/          # Screenshots e demonstrações visuais da aplicação
+├── src/                  # Código-fonte principal refatorado em POO
+│   ├── models/           # Classes e entidades do sistema (ex: Conta, Transacao)
+│   └── ...               # Serviços e utilitários
+├── .gitignore            # Arquivos e pastas ignorados pelo Git
+├── main.py               # Ponto de entrada (CLI) da aplicação
 └── README.md             # Documentação do projeto
-
 ```
 
 ---
 
 ## ▶️ Como Executar o Projeto
 
-Certifique-se de ter o Python 3.13 (or superior) instalado em sua máquina. Não há necessidade de instalar dependências externas.
+Certifique-se de ter o Python 3.13 (ou superior) instalado na sua máquina. Não é necessária a instalação de dependências externas.
 
-1. Clone este repositório:
-```bash
+**1 - Clone o repositório:**
+
+```Bash
 git clone [https://github.com/samuel-svaz-dev/sistema-de-financas.git](https://github.com/samuel-svaz-dev/sistema-de-financas.git)
-
 ```
 
+**2 - Navegue até o diretório do projeto:**
 
-2. Navegue até o diretório do projeto:
-```bash
+```Bash
 cd sistema-de-financas
-
 ```
 
 
-3. Execute a aplicação:
-```bash
+**3 -Execute a aplicação:**
+
+```Bash
 python main.py
-
 ```
-
-
 
 ---
 
 ## 🚧 Roadmap de Evolução
+[x] Refatoração para POO: Migração da arquitetura funcional/procedural para Orientada a Objetos.
 
-O projeto está em constante evolução. Os próximos passos planejados são:
+[ ] Persistência Estruturada (JSON/SQLite): Implementação de banco de dados ou arquivos JSON para persistência permanente.
 
-* [ ] **Refatoração para POO:** Migrar a arquitetura funcional atual para Programação Orientada a Objetos (OOP).
-* [ ] **Persistência Estruturada (JSON):** Substituir o arquivo TXT por armazenamento JSON para melhor estruturação dos dados.
-* [ ] **Categorização:** Adicionar categorias para despesas (Ex: Alimentação, Transporte) e receitas.
-* [ ] **Testes Automatizados:** Implementar testes unitários utilizando `pytest` para garantir a integridade dos cálculos.
+[ ] Categorização de Transações: Separação por categorias (Ex: Alimentação, Moradia, Lazer).
 
----
+[ ] Testes Automatizados: Cobertura de testes unitários com pytest para validação das regras de negócio.
 
 ## 📸 Demonstração do Sistema
-
-![Tela Principal do Sistema](imagens/menu_inicial.png)
-
----
-
-![Adicionando Receita](imagens/receita.png)
-
----
-
-![Adicionando Despesa](imagens/despesa.png)
-
----
-
-![Extrato](imagens/extrato.png)
-
----
-
-![Saída do Sistema](imagens/saida.png)
-
----
+(Confira os registros visuais do funcionamento da aplicação na pasta docs/imagens)
 
 ## 👤 Autor
-
 **Samuel Vaz**
-*Professor de Matemática & Desenvolvedor Backend Python em Construção.*
 
-Fique à vontade para se conectar comigo, dar feedbacks sobre o código ou sugerir melhorias!
+Professor de Matemática & Desenvolvedor Backend Python.
 
-* **GitHub:** [@samuel-svaz-dev](https://github.com/samuel-svaz-dev)
-* **LinkedIn:** [Samuel Vaz](https://www.linkedin.com/in/samuel-souza-vaz-1bb547378/)
+Sinta-se à vontade para entrar em contato, sugerir melhorias no código ou acompanhar meu portfólio de transição de carreira!
 
-```
+GitHub: @samuel-svaz-dev
 
-```
+LinkedIn: Samuel Vaz
